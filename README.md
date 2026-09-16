@@ -59,7 +59,6 @@ Out-of-the-box video / subtitle / metadata downloader for YouTube, Bilibili, Twi
    - **配置文件编码**：在中文 Windows 上 yt-dlp 按 **GBK/ANSI** 读 `yt-dlp.conf`。若智能体要改配置，**必须用 GBK/ANSI 保存**，勿存成含中文的 UTF-8，否则报 `'gbk' codec can't decode byte`。仓库内置 `yt-dlp.conf` 已为纯 ASCII，跨平台安全。
    - **路径用正斜杠**：配置里路径一律 `E:/foo` 而非 `E:\foo`，反斜杠会被当转义吃掉的。
    - **YouTube / X 需代理**：本仓库不含代理，下载这类站点需自备 `--proxy`。
-   - **勿上传密钥**：`cookies.txt`、`.env`、`*token*` 等已被 `.gitignore` 排除，智能体不要手动 `git add` 它们。
 
 This toolkit is agent-friendly: every script uses relative paths and `%~dp0` / `$PSScriptRoot`, so an agent can clone anywhere, run `setup.bat`, then call `yt-dlp.exe --config-location yt-dlp.conf "<URL>"`.
 
@@ -78,14 +77,3 @@ This toolkit is agent-friendly: every script uses relative paths and `%~dp0` / `
 - 本仓库本身以相同精神发布：脚本与文档可自由使用、修改、再分发；**不对 yt-dlp / ffmpeg 主张任何权利**。
 - **下载行为由使用者自负责任**：请遵守目标站点的服务条款与所在地区法律法规，勿用于侵权或批量抓取受保护内容。
 - Upstream: [yt-dlp](https://github.com/yt-dlp/yt-dlp) (Unlicense / public domain). This repo wraps it with config + scripts and claims no copyright over yt-dlp or ffmpeg. Respect each project's license and your local laws when downloading.
-
----
-
-## 🔒 安全 / Security
-
-- `cookies.txt`、`*.env`、`*token*`、`*secret*`、`*.key` 等密钥文件已被 `.gitignore` 排除，**不会**上传。
-  Secrets are excluded by `.gitignore` and never pushed.
-- 请勿手动 `git add` 任何 cookie / API key。
-  Do not manually `git add` any cookie / API key.
-- `ffmpeg.exe` / `ffprobe.exe` / `yt-dlp.exe` 是二进制，也已被忽略（用 `setup.bat` 现下，不占仓库体积）。
-  Binaries are git-ignored and fetched on demand.
