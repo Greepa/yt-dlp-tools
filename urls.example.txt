@@ -1,0 +1,4 @@
+# 每行一个视频链接 / one URL per line
+# 例 / example:
+https://www.bilibili.com/video/BV1GJ411x7h7
+https://www.youtube.com/watch?v=dQw4w9WgXcQ
